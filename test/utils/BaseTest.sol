@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.13;
+pragma solidity >=0.6.0 <0.9.0;
+pragma abicoder v2;
 
 import "forge-std/Test.sol";
 
@@ -34,12 +35,25 @@ abstract contract BaseTest is Test {
     function setUp() public virtual {
         utilities = new Utilities();
 
-        console.log("userCount", userCount);
-
         if (userCount > 0) {
-            console.log("running utilities.createUsers");
             // check which one we need to call
             users = utilities.createUsers(userCount, userInitialFunds, userLabels);
         }
+    }
+
+    function runTest() public {
+        // run the exploit
+        exploit();
+
+        // verify the exploit
+        success();
+    }
+
+    function exploit() internal virtual {
+        /* IMPLEMENT YOUR EXPLOIT */
+    }
+
+    function success() internal virtual {
+        /* IMPLEMENT YOUR EXPLOIT */
     }
 }

@@ -1,2 +1,3 @@
-TestContract:testBar() (gas: 314)
-TestContract:testSetUp() (gas: 7310)
+TestGuessTheNumber:testExploit() (gas: 33861)
+TestOpenValutChallenge:testExploit() (gas: 81265)
+TestWeirdVaultChallenge:testExploit() (gas: 116345)
