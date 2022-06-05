@@ -23,6 +23,6 @@ jobs:
         run: forge install
 
       - name: Run tests
+        run: npm run test
         env:
           FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
-        run: npm run test
