@@ -4,6 +4,7 @@ on:
     branches:
       - main
   pull_request:
+  
 
 env:
   FOUNDRY_PROFILE: ci
@@ -23,6 +24,9 @@ jobs:
         run: forge install
 
       - name: Run tests
-        run: npm run test
+        run: |
+          touch .env 
+          echo FOUNDRY_ETH_RPC_URL=${{ secrets.RPC_URL }} >> .env 
+          npm run test
         env:
           FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
