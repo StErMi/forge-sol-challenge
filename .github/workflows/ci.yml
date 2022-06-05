@@ -24,5 +24,5 @@ jobs:
 
       - name: Run tests
         env:
-          RPC_URL: ${{ secrets.RPC_URL }}
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
         run: npm run test
