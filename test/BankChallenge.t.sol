@@ -37,8 +37,6 @@ contract TestBankChallenge is BaseTest {
     }
 
     function exploit() internal override {
-        uint256 balanceBefore = player.balance;
-
         vm.startPrank(player);
 
         // We are going to exploit by calling two times in batch the `deposit` function
