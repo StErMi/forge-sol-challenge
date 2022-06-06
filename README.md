@@ -21,7 +21,8 @@ npm run test:fork # run tests that needs to use a mainnet fork
 
 ### Configure FOUNDRY_ETH_RPC_URL for local testing
 
-Some of the tests needs to use a mainnet fork. Create a `.env` file and add the env variable `FOUNDRY_ETH_RPC_URL` like this
+1. Rename the `.env.example` file to `.env` via `mv .env.example .env`
+2. Update the `FOUNDRY_ETH_RPC_URL` with the mainnet RPC url. You can get one directly from Alchemy or Infura
 
 ```
 FOUNDRY_ETH_RPC_URL=YOUR_RPC_URL_FROM_ALCHEMY_OR_INFURA
