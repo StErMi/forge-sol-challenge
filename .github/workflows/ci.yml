@@ -23,8 +23,8 @@ jobs:
       - name: Install deps
         run: forge install
 
-      - name: Run tests
-        run: |
-          touch .env 
-          echo FOUNDRY_ETH_RPC_URL=${{ secrets.RPC_URL }} >> .env 
-          npm run test
+      - name: Run local test
+        run: npm run test:local
+
+      - name: Run fork test
+        run: forge test --match-contract HodlChallenge --fork-url $FOUNDRY_ETH_RPC_URL --fork-block-number 14850000
