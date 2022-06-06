@@ -24,7 +24,7 @@ jobs:
         run: forge install
 
       - name: Run local test
-        run: forge test --no-match-contract HodlChallenge
+        run: RUST_BACKTRACE=full forge test --no-match-contract HodlChallenge
 
       - name: Run fork test
-        run: forge test --match-contract HodlChallenge --fork-url $FOUNDRY_ETH_RPC_URL --fork-block-number 14850000
+        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-url $FOUNDRY_ETH_RPC_URL --fork-block-number 14850000
