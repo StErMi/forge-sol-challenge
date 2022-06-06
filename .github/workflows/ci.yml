@@ -26,6 +26,6 @@ jobs:
         run: RUST_BACKTRACE=full forge test --no-match-contract HodlChallenge
 
       - name: Run fork test
-        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-block-number 14850000
         env:
           FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
+        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-block-number 14850000
