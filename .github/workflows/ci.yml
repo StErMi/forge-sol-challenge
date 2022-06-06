@@ -11,6 +11,8 @@ env:
 jobs:
   run-ci:
     runs-on: ubuntu-latest
+    environment:
+      name: CI
     steps:
       - uses: actions/checkout@v2
 
