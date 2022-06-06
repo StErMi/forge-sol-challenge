@@ -11,6 +11,8 @@ env:
 jobs:
   run-ci:
     runs-on: ubuntu-latest
+    environment:
+      name: CI
     steps:
       - uses: actions/checkout@v2
 
@@ -26,6 +28,6 @@ jobs:
         run: RUST_BACKTRACE=full forge test --no-match-contract HodlChallenge
 
       - name: Run fork test
-        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-url $FOUNDRY_ETH_RPC_URL --fork-block-number 14850000
+        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-url $ETH_MAINNET_URL --fork-block-number 14850000
         env:
-          FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
+          ETH_MAINNET_URL: ${{ secrets.ETH_MAINNET_URL }}
