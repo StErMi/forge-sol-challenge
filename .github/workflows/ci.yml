@@ -7,7 +7,6 @@ on:
 
 env:
   FOUNDRY_PROFILE: ci
-  FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
 
 jobs:
   run-ci:
@@ -25,6 +24,3 @@ jobs:
 
       - name: Run local test
         run: RUST_BACKTRACE=full forge test --no-match-contract HodlChallenge
-
-      - name: Run fork test
-        run: RUST_BACKTRACE=full forge test --match-contract HodlChallenge --fork-url $FOUNDRY_ETH_RPC_URL --fork-block-number 14850000
