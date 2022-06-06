@@ -16,7 +16,7 @@ I'll create a blog post about a full explanation for each challenge in the upcom
 ```sh
 npm install
 npm run test:local # run local tests
-npm run test:forklocal # run tests that needs to use a mainnet fork
+npm run test:fork # run tests that needs to use a mainnet fork
 ```
 
 ### Configure FOUNDRY_ETH_RPC_URL for local testing
@@ -33,6 +33,8 @@ This is my pesonal configuration:
 
 1. Create an environment called `CI`
 2. Add a secret env variable named `FOUNDRY_ETH_RPC_URL` and set the value equal to the Infura/Alchemy RPC url.
+
+The GitHub CI will run the `test:forkci` that is different compared to `test:fork` just because GitHub "inject" env variables directly from the action.
 
 ## Development
 

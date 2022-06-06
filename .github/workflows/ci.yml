@@ -28,6 +28,6 @@ jobs:
         run: npm run test:local
 
       - name: Run fork test
-        run: npm run test:fork
+        run: npm run test:forkci
         env:
           FOUNDRY_ETH_RPC_URL: ${{ secrets.FOUNDRY_ETH_RPC_URL }}
