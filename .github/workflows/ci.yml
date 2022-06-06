@@ -7,6 +7,7 @@ on:
 
 env:
   FOUNDRY_PROFILE: ci
+  FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL }}
 
 jobs:
   run-ci:
