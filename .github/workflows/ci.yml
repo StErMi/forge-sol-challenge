@@ -28,7 +28,7 @@ jobs:
       - name: Run fork test
         run: |
           touch .env 
-          echo FOUNDRY_ETH_RPC_URL=${{ secrets.RPC_URL }} >> .env 
+          echo FOUNDRY_ETH_RPC_URL=${{ secrets.ETH_MAINNET_URL }} >> .env 
           npm run test:fork
         env:
           FOUNDRY_ETH_RPC_URL: ${{ secrets.ETH_MAINNET_URL }}
