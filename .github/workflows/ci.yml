@@ -30,4 +30,4 @@ jobs:
       - name: Run fork test
         run: npm run test:fork
         env:
-          FOUNDRY_ETH_RPC_URL: ${{ secrets.ETH_MAINNET_URL }}
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.FOUNDRY_ETH_RPC_URL }}
